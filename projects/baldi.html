@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gaming monetization demo</title>
+    <style>
+        /* Your existing styles here */
+    </style>
+</head>
+
+<body>
+    <button class="c-button" onclick="toggleFullScreen()">PRESS HERE FOR FULL SCREEN</button>
+
+    <script>
+        function toggleFullScreen() {
+            var elem = document.getElementById('gameFrame');
+
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+    </script>
+
+    <!-- Your existing game iframe -->
+    <iframe id="gameFrame" src="https://html5.gamemonetize.com/iiifrxhcnzl5laslqf3eaedtevjzb2bu/" width="100%" height="100%" frameborder="1000" data-gameplayer-content="true"></iframe>
+</body>
+
+</html>
